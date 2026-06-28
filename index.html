@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dulce Alquimia - Insumos de Repostería y Pastelería Fina</title>
+  <meta name="description" content="Encuentra los mejores ingredientes de precisión y herramientas de repostería para elevar tus creaciones al siguiente nivel. Materia prima, colorantes, moldes y utensilios premium.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- App Header / Navigation -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="logo-area" id="nav-logo">
+        <span class="brand-title">Dulce Alquimia</span>
+      </div>
+
+      <nav class="nav-menu" id="nav-links">
+        <a href="#home" class="nav-link active" data-view="home">Inicio</a>
+        <a href="#catalog" class="nav-link" data-view="catalog">Insumos</a>
+        <a href="#promotions" class="nav-link" data-view="promotions">Promociones</a>
+        <a href="#contact" class="nav-link" data-view="contact">Contacto</a>
+        <a href="#blog" class="nav-link" data-view="blog">Blog</a>
+        <a href="#admin" class="nav-link admin-nav-link" data-view="admin" id="link-admin-panel">Panel Admin</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Currency Selector -->
+        <div class="currency-selector" id="currency-toggle" title="Cambiar Moneda">
+          <span>Moneda</span>
+          <span class="currency-active" id="active-currency">SOL</span>
+        </div>
+
+        <!-- Auth Button/Profile -->
+        <button class="action-btn" id="btn-auth-trigger" title="Mi Cuenta" aria-label="Iniciar Sesión / Registrarse">
+          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span class="user-greeting" id="user-display">Ingresar</span>
+        </button>
+
+        <!-- Cart Trigger -->
+        <button class="action-btn cart-trigger" id="btn-cart-trigger" title="Ver Carrito" aria-label="Ver Carrito">
+          <div class="cart-icon-wrapper">
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="cart-badge" id="cart-count">0</span>
+          </div>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-toggle" id="btn-mobile-menu" aria-label="Abrir menú">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <div class="drawer-header">
+      <span class="brand-title">Dulce Alquimia</span>
+      <button class="close-drawer" id="btn-close-drawer">&times;</button>
+    </div>
+    <nav class="drawer-links">
+      <a href="#home" class="drawer-link active" data-view="home">Inicio</a>
+      <a href="#catalog" class="drawer-link" data-view="catalog">Insumos</a>
+      <a href="#promotions" class="drawer-link" data-view="promotions">Promociones</a>
+      <a href="#contact" class="drawer-link" data-view="contact">Contacto</a>
+      <a href="#blog" class="drawer-link" data-view="blog">Blog</a>
+      <a href="#admin" class="drawer-link" data-view="admin">Panel Admin</a>
+    </nav>
+    <div class="drawer-footer">
+      <div class="currency-selector" id="mobile-currency-toggle">
+        <span>Moneda: </span>
+        <strong id="mobile-active-currency">SOL</strong>
+      </div>
+    </div>
+  </div>
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+
+  <!-- MAIN APP VIEWS CONTAINER -->
+  <main class="app-main-content">
+
+    <!-- 1. HOME VIEW (#view-home) -->
+    <section id="view-home" class="app-view active-view">
+      <div class="hero-section">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span class="brand-sub">DULCE</span>
+            <span class="brand-main">ALQUIMIA</span>
+          </h1>
+          <p class="hero-description">
+            Transformamos la pasión por la repostería en arte comestible. Encuentra ingredientes de precisión y herramientas mágicas para elevar tus creaciones al siguiente nivel.
+          </p>
+          <button class="btn btn-primary btn-hero" id="btn-home-shop">
+            <span>Ver Insumos</span>
+            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+          
+          <!-- Social Proof Avatars -->
+          <div class="social-proof">
+            <div class="avatar-group">
+              <span class="avatar-circle av-1"></span>
+              <span class="avatar-circle av-2"></span>
+              <span class="avatar-circle av-3"></span>
+            </div>
+            <p class="proof-text">Únete a más de <strong class="highlight-count">2,500+ alquimistas</strong> del dulce.</p>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="collage-container">
+            <div class="sparkles-bg"></div>
+            <!-- Dynamic Hero Image generated by AI -->
+            <div class="main-collage-card">
+              <img id="hero-img-element" src="images/hero_pastry_scene.png" alt="Pastry Preparation Scene" class="hero-main-img">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Categories Section ("Ingredientes con Alma") -->
+      <div class="section-categories">
+        <div class="section-header">
+          <div>
+            <span class="subtitle-tag">NUESTRO CATÁLOGO</span>
+            <h2 class="section-heading">Ingredientes con Alma</h2>
+          </div>
+          <button class="btn-text-link" id="btn-explore-categories">
+            <span>Explorar categorías</span>
+            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+
+        <div class="categories-grid">
+          <!-- Card 1 -->
+          <div class="category-card" data-category="insumos">
+            <div class="cat-image-wrapper bg-blue-tint">
+              <!-- SVG representation of baking raw materials / raw flour -->
+              <svg viewBox="0 0 200 200" class="cat-svg">
+                <defs>
+                  <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#7a93a1" />
+                    <stop offset="100%" stop-color="#4e6573" />
+                  </linearGradient>
+                </defs>
+                <rect width="200" height="200" rx="24" fill="url(#blueGrad)" opacity="0.15"/>
+                <!-- Flour Sack / Ingredients icon outline & details -->
+                <path d="M60,80 C60,50 80,40 100,40 C120,40 140,50 140,80 L135,160 C135,165 130,170 120,170 L80,170 C70,170 65,165 65,160 Z" fill="#8ca8b8" />
+                <path d="M65,70 L135,70 C140,70 145,75 140,85 L130,165 C128,170 122,172 115,172 L85,172 C78,172 72,170 70,165 L60,85 C55,75 60,70 65,70 Z" fill="#abc4d4" opacity="0.8" />
+                <ellipse cx="100" cy="70" rx="35" ry="10" fill="#6d8a9c" />
+                <path d="M80,110 L120,110 M90,130 L110,130" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+                <!-- Wheat sprig -->
+                <path d="M150,150 L170,110 M170,110 L160,115 M170,110 L175,120 M160,130 L150,135" stroke="#8ca8b8" stroke-width="3" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="category-info">
+              <h3>Materia Prima y Cremas</h3>
+              <p>La base perfecta para tus creaciones más exigentes e ingredientes selectos.</p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="category-card" data-category="moldes">
+            <div class="cat-image-wrapper bg-cream-tint">
+              <svg viewBox="0 0 200 200" class="cat-svg">
+                <defs>
+                  <linearGradient id="creamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#e3d4b6" />
+                    <stop offset="100%" stop-color="#bda780" />
+                  </linearGradient>
+                </defs>
+                <rect width="200" height="200" rx="24" fill="url(#creamGrad)" opacity="0.15"/>
+                <!-- Kitchen tools / scales SVG -->
+                <rect x="60" y="140" width="80" height="25" rx="5" fill="#cfbba3" />
+                <rect x="70" y="130" width="60" height="10" fill="#a8957c" />
+                <path d="M75,130 L90,80 L110,80 L125,130 Z" fill="#cfbba3" opacity="0.9" />
+                <circle cx="100" cy="70" r="25" fill="#f0e2cc" stroke="#a8957c" stroke-width="3" />
+                <line x1="100" y1="70" x2="115" y2="60" stroke="#a21b4b" stroke-width="3" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="category-info">
+              <h3>Herramientas y Utensilios</h3>
+              <p>Equipamiento profesional para manos reposteras que crean verdadera magia.</p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="category-card" data-category="decoracion">
+            <div class="cat-image-wrapper bg-pink-tint">
+              <svg viewBox="0 0 200 200" class="cat-svg">
+                <defs>
+                  <linearGradient id="pinkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#e66ea5" />
+                    <stop offset="100%" stop-color="#a21b4b" />
+                  </linearGradient>
+                </defs>
+                <rect width="200" height="200" rx="24" fill="url(#pinkGrad)" opacity="0.15"/>
+                <!-- Sparkling drops / colors representation -->
+                <circle cx="100" cy="100" r="30" fill="url(#pinkGrad)" opacity="0.8" />
+                <circle cx="65" cy="75" r="12" fill="#4de0d7" />
+                <circle cx="135" cy="70" r="16" fill="#fbc3d8" />
+                <circle cx="140" cy="130" r="10" fill="#ffd470" />
+                <path d="M100,50 L105,65 L120,70 L105,75 L100,90 L95,75 L80,70 L95,65 Z" fill="#fff" opacity="0.9"/>
+                <path d="M60,120 L62,128 L70,130 L62,132 L60,140 L58,132 L50,130 L58,128 Z" fill="#fff" opacity="0.9"/>
+              </svg>
+            </div>
+            <div class="category-info">
+              <h3>Magia y Color</h3>
+              <p>Añade ese toque de personalidad vibrante y brillo único a tus pasteles.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 2. CATALOG VIEW (#view-catalog) -->
+    <section id="view-catalog" class="app-view">
+      <div class="catalog-header">
+        <span class="pill-category-indicator">UTENSILIOS PROFESIONALES</span>
+        <h1 class="catalog-title">The Alchemist’s Toolset</h1>
+        <p class="catalog-desc">Inspira, crea y sorprende. Reúne todo lo necesario para transformar ingredientes cotidianos en piezas de arte que conquistan la vista y el paladar.</p>
+      </div>
+
+      <!-- Filters & Search Toolbar -->
+      <div class="catalog-toolbar">
+        <div class="filters-scroll">
+          <span class="filter-label">Filtrar Por:</span>
+          <div class="filter-pills" id="filter-pills-container">
+            <button class="pill-btn active" data-filter="all">Todos los Elementos</button>
+            <button class="pill-btn" data-filter="insumos">Insumos de Pastelería</button>
+            <button class="pill-btn" data-filter="decoracion">Decoración</button>
+            <button class="pill-btn" data-filter="moldes">Moldes y Repostería</button>
+            <button class="pill-btn" data-filter="utensilios">Utensilios</button>
+            <button class="pill-btn" data-filter="equipos">Equipos</button>
+            <button class="pill-btn" data-filter="empaques">Empaques</button>
+            <button class="pill-btn" data-filter="ofertas">Ofertas</button>
+          </div>
+        </div>
+
+        <div class="search-box-container">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="catalog-search" placeholder="Buscar Ingredientes o Moldes..." aria-label="Buscar productos">
+        </div>
+      </div>
+
+      <!-- Dynamic Product Grid -->
+      <div class="product-grid" id="catalog-product-grid">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+    </section>
+
+
+    <!-- 2.5 PROMOTIONS VIEW (#view-promotions) -->
+    <section id="view-promotions" class="app-view">
+      <div class="catalog-header">
+        <span class="pill-category-indicator">DESCUENTOS MÁGICOS</span>
+        <h1 class="catalog-title">Hechizos de Ahorro</h1>
+        <p class="catalog-desc">Optimiza tus presupuestos con nuestras ofertas y cupones exclusivos de temporada. Copia el código y aplícalo al finalizar tu pedido.</p>
+      </div>
+
+      <div class="promotions-grid">
+        <!-- Promo 1 -->
+        <div class="promo-card">
+          <div class="promo-badge">10% OFF</div>
+          <h3>Cupón Global Alquimia</h3>
+          <p>Obtén un 10% de descuento en el total de tu primera compra. Válido para todos los productos de la tienda.</p>
+          <div class="promo-code-box">
+            <span class="code-text" id="code-alquimia10">ALQUIMIA10</span>
+            <button class="btn-copy-code" onclick="copyCoupon('ALQUIMIA10')">Copiar</button>
+          </div>
+          <span class="promo-expiry">Expiración: 31 Dic, 2026</span>
+        </div>
+
+        <!-- Promo 2 -->
+        <div class="promo-card highlight-promo">
+          <div class="promo-badge bg-gold">15% OFF</div>
+          <h3>Creadores Dulces</h3>
+          <p>Para compras mayores a S/ 150 (ó $40). Eleva tu producción con ingredientes seleccionados.</p>
+          <div class="promo-code-box">
+            <span class="code-text" id="code-duce15">DUCE15</span>
+            <button class="btn-copy-code" onclick="copyCoupon('DUCE15')">Copiar</button>
+          </div>
+          <span class="promo-expiry">Expiración: 30 Nov, 2026</span>
+        </div>
+
+        <!-- Promo 3 -->
+        <div class="promo-card">
+          <div class="promo-badge bg-teal">ENVÍO GRATIS</div>
+          <h3>Envío Alquimista Express</h3>
+          <p>Despreocúpate del costo de envío. Gratis para compras mayores a S/ 120 en Lima Metropolitana y Callao.</p>
+          <div class="promo-code-box">
+            <span class="code-text" style="font-size: 0.9rem; font-weight:700;">APLICADO AUTOMÁTICAMENTE</span>
+          </div>
+          <span class="promo-expiry">Válido indefinidamente</span>
+        </div>
+
+        <!-- Promo 4 -->
+        <div class="promo-card">
+          <div class="promo-badge">20% OFF</div>
+          <h3>Especial Moldes de Silicona</h3>
+          <p>Usa este cupón para obtener 20% de descuento exclusivamente en la categoría Moldes y Repostería.</p>
+          <div class="promo-code-box">
+            <span class="code-text" id="code-magic20">MAGIC20</span>
+            <button class="btn-copy-code" onclick="copyCoupon('MAGIC20')">Copiar</button>
+          </div>
+          <span class="promo-expiry">Expiración: 31 Oct, 2026</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 2.6 CONTACT VIEW (#view-contact) -->
+    <section id="view-contact" class="app-view">
+      <div class="catalog-header">
+        <span class="pill-category-indicator" style="background-color: var(--color-blue-tint); color: #1d4ed8;">ATENCIÓN AL CLIENTE</span>
+        <h1 class="catalog-title">Contacta a los Alquimistas</h1>
+        <p class="catalog-desc">¿Tienes dudas sobre algún ingrediente de precisión o un pedido especial? Nuestro equipo de expertos reposteros está listo para asesorarte.</p>
+      </div>
+
+      <div class="contact-layout">
+        <!-- Contact Info Column -->
+        <div class="contact-info-col">
+          <div class="contact-info-card">
+            <div class="contact-item">
+              <div class="contact-icon bg-pink-tint color-pink">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-svg">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4>Línea Telefónica</h4>
+                <p>+51 987 654 321</p>
+                <p>(01) 456-7890</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon bg-blue-tint color-teal">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-svg">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h4>Correo Electrónico</h4>
+                <p>contacto@dulcealquimia.pe</p>
+                <p>soporte@dulcealquimia.pe</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon bg-cream-tint" style="color: #b45309;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-svg">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div>
+                <h4>Laboratorio Principal (Showroom)</h4>
+                <p>Av. Primavera 1024, Oficina 402</p>
+                <p>Santiago de Surco, Lima, Perú</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon bg-yellow-tint" style="color: var(--color-yellow);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-svg">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h4>Horario de Atención</h4>
+                <p>Lunes a Sábado: 9:00 AM - 7:00 PM</p>
+                <p>Domingos: Cerrado (Día de horneado familiar)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form Column -->
+        <div class="contact-form-col">
+          <form id="form-contact-inquiry" class="contact-form-card" onsubmit="handleContactSubmit(event)">
+            <h3>Envíanos un mensaje</h3>
+            <p style="color:var(--color-medium); font-size:0.85rem; margin-bottom: 20px;">Nos pondremos en contacto contigo en menos de 24 horas hábiles.</p>
+            
+            <div class="form-group-floating">
+              <input type="text" id="contact-name" required placeholder=" ">
+              <label for="contact-name">Nombre Completo</label>
+            </div>
+            
+            <div class="form-group-floating" style="margin-top: 20px;">
+              <input type="email" id="contact-email" required placeholder=" ">
+              <label for="contact-email">Correo Electrónico</label>
+            </div>
+            
+            <div class="form-group" style="margin-top: 20px;">
+              <label for="contact-subject">Asunto</label>
+              <select id="contact-subject" style="background-color: var(--color-bg); padding:12px; border:1px solid var(--color-light); border-radius:var(--radius-md);">
+                <option value="duda">Duda sobre un ingrediente</option>
+                <option value="pedido">Consulta sobre estado de mi pedido</option>
+                <option value="mayorista">Venta corporativa / mayorista</option>
+                <option value="sugerencia">Sugerencias y comentarios</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="margin-top: 20px;">
+              <label for="contact-message">Tu Mensaje</label>
+              <textarea id="contact-message" rows="4" required placeholder="Escribe aquí tu consulta..." style="background-color: var(--color-bg); border:1px solid var(--color-light); border-radius:var(--radius-md); padding:12px; font-family:var(--font-sans);"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top:20px;">Enviar Consulta Mágica</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 2.7 BLOG VIEW (#view-blog) -->
+    <section id="view-blog" class="app-view">
+      <div class="catalog-header">
+        <span class="pill-category-indicator" style="background-color: var(--color-pink-tint); color: var(--brand-primary);">EL GRIMORIO DEL DULCE</span>
+        <h1 class="catalog-title">El Blog Alquimista</h1>
+        <p class="catalog-desc">Secretos, técnicas científicas y recetas artísticas reveladas por nuestros maestros pasteleros para que domines el arte del azúcar.</p>
+      </div>
+
+      <div class="blog-grid">
+        <!-- Post 1 -->
+        <article class="blog-card">
+          <div class="blog-card-img-wrapper bg-blue-tint">
+            <!-- Macarons SVG visual -->
+            <svg viewBox="0 0 200 130" style="width:100%; height:100%; max-height:160px; padding: 10px;">
+              <ellipse cx="100" cy="50" rx="45" ry="15" fill="#f43f5e" />
+              <rect x="55" y="50" width="90" height="6" rx="3" fill="#fda4af" />
+              <ellipse cx="100" cy="62" rx="45" ry="15" fill="#f43f5e" />
+              <circle cx="150" cy="40" r="10" fill="#fbc3d8" />
+              <path d="M145,25 L147,31 L153,32 L147,33 L145,39 L143,33 L137,32 L143,31 Z" fill="#fff" />
+            </svg>
+            <span class="blog-card-tag">TÉCNICAS</span>
+          </div>
+          <div class="blog-card-body">
+            <span class="blog-card-meta">20 Jun, 2026 &bull; 5 min de lectura</span>
+            <h3>5 Secretos para un Macaron Perfecto</h3>
+            <p>Aprende el arte de la técnica del merengue italiano, el secado exacto de las conchas y cómo lograr el 'pie' característico sin que se agriete la superficie.</p>
+            <a href="#blog-detail-1" class="btn-text-link" style="margin-top: auto;">Leer más &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Post 2 -->
+        <article class="blog-card">
+          <div class="blog-card-img-wrapper bg-cream-tint">
+            <!-- Chocolate Tempering SVG visual -->
+            <svg viewBox="0 0 200 130" style="width:100%; height:100%; max-height:160px; padding: 10px;">
+              <rect x="50" y="30" width="80" height="50" rx="4" fill="#451a03" />
+              <line x1="50" y1="55" x2="130" y2="55" stroke="#f59e0b" stroke-width="1.5" />
+              <line x1="90" y1="30" x2="90" y2="80" stroke="#f59e0b" stroke-width="1.5" />
+              <!-- Melting chocolate wave -->
+              <path d="M30,95 Q100,55 170,95 L170,120 L30,120 Z" fill="#451a03" />
+              <circle cx="155" cy="80" r="12" fill="#df9c2c" opacity="0.2" />
+            </svg>
+            <span class="blog-card-tag">CIENCIA</span>
+          </div>
+          <div class="blog-card-body">
+            <span class="blog-card-meta">14 Jun, 2026 &bull; 8 min de lectura</span>
+            <h3>El Secreto Científico del Temperado</h3>
+            <p>Descubre por qué cristalizar la manteca de cacao en su forma Beta V es crucial para obtener chocolates crujientes, brillantes y que se desmolden solos.</p>
+            <a href="#blog-detail-2" class="btn-text-link" style="margin-top: auto;">Leer más &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Post 3 -->
+        <article class="blog-card">
+          <div class="blog-card-img-wrapper bg-pink-tint">
+            <!-- Gel Dropper SVG -->
+            <svg viewBox="0 0 200 130" style="width:100%; height:100%; max-height:160px; padding: 10px;">
+              <rect x="85" y="30" width="30" height="70" rx="4" fill="#a21b4b" />
+              <rect x="91" y="20" width="18" height="10" fill="#374151" />
+              <!-- Dropper pipette -->
+              <path d="M100,100 L100,120 L97,123 L103,123 L100,120 Z" stroke="#374151" stroke-width="2" fill="#fff" />
+              <circle cx="100" cy="130" r="4" fill="#a21b4b" />
+            </svg>
+            <span class="blog-card-tag">COLORIMETRÍA</span>
+          </div>
+          <div class="blog-card-body">
+            <span class="blog-card-meta">08 Jun, 2026 &bull; 6 min de lectura</span>
+            <h3>Colorantes en Gel vs Polvo: Cuándo usar cada uno</h3>
+            <p>¿Tu merengue se baja o tu fondant se reseca al teñirlo? Te enseñamos cómo afecta la humedad del colorante a tus preparaciones y cuál elegir para cada receta.</p>
+            <a href="#blog-detail-3" class="btn-text-link" style="margin-top: auto;">Leer más &rarr;</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+
+    <!-- 3. CART VIEW (#view-cart) -->
+    <section id="view-cart" class="app-view">
+      <h1 class="cart-title">Tu Carrito</h1>
+      <p class="cart-subtitle" id="cart-status-text">Tienes 0 artículos en tu selección de hoy.</p>
+
+      <div class="cart-layout">
+        <!-- Left Side: Items List -->
+        <div class="cart-items-column">
+          <div class="cart-items-container" id="cart-items-list">
+            <!-- Dynamic Cart Items Rendered here -->
+            <div class="empty-cart-state" id="empty-cart-msg">
+              <svg class="empty-cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+              </svg>
+              <h3>Tu carrito está vacío</h3>
+              <p>Explora nuestro catálogo e inspírate para crear tu próxima obra maestra.</p>
+              <button class="btn btn-primary" id="btn-cart-empty-shop">Explorar Catálogo</button>
+            </div>
+          </div>
+          
+          <button class="btn-text-link back-to-shop-btn" id="btn-continue-shopping">
+            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            <span>Continuar comprando</span>
+          </button>
+        </div>
+
+        <!-- Right Side: Order Summary -->
+        <div class="cart-summary-column" id="cart-summary-sidebar">
+          <div class="summary-card">
+            <h2>Resumen</h2>
+            
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <span id="summary-subtotal">S/ 0.00</span>
+            </div>
+            
+            <div class="summary-row">
+              <span>Envío</span>
+              <span class="delivery-status" id="summary-shipping">Gratis</span>
+            </div>
+            
+            <div class="summary-row">
+              <span>Impuestos (estimado)</span>
+              <span id="summary-tax">S/ 0.00</span>
+            </div>
+
+            <div class="summary-divider"></div>
+            
+            <div class="summary-row total-row">
+              <span>Total</span>
+              <span class="total-price" id="summary-total">S/ 0.00</span>
+            </div>
+
+            <!-- Coupon Code Container -->
+            <div class="coupon-section">
+              <label for="coupon-code">CÓDIGO DE CUPÓN</label>
+              <div class="coupon-input-group">
+                <input type="text" id="coupon-code" placeholder="Ej: ALQUIMIA10" aria-label="Código de cupón">
+                <button class="btn btn-secondary" id="btn-apply-coupon">Aplicar</button>
+              </div>
+              <div class="coupon-message" id="coupon-msg"></div>
+            </div>
+
+            <!-- Checkout Action Button -->
+            <button class="btn btn-primary btn-checkout" id="btn-checkout-confirm">
+              <span>Confirmar mi Pedido</span>
+              <svg class="btn-checkout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+            </button>
+
+            <!-- Trust badges -->
+            <div class="trust-badges">
+              <div class="badge-item">
+                <svg viewBox="0 0 24 24" class="badge-svg">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span>Pago seguro garantizado</span>
+              </div>
+              <div class="badge-item">
+                <svg viewBox="0 0 24 24" class="badge-svg">
+                  <rect x="1" y="3" width="15" height="13" fill="none" stroke="currentColor" stroke-width="2"/>
+                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" fill="none" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="5.5" cy="18.5" r="2.5" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="18.5" cy="18.5" r="2.5" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span>Envío prioritario disponible</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Exclusive Offer Widget -->
+          <div class="exclusive-offer-card">
+            <span class="offer-tag">OFERTA EXCLUSIVA</span>
+            <h3>¡Suscripción Alquimia!</h3>
+            <p>Ahorra 15% en todos tus pedidos mensuales y recibe suministros frescos sin interrupción.</p>
+            <a href="#subscribe" class="offer-link" id="btn-offer-more">Saber más</a>
+            <div class="offer-graphic-cake"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 4. ADMIN DASHBOARD VIEW (#view-admin) -->
+    <section id="view-admin" class="app-view admin-dashboard-view">
+      <div class="admin-layout">
+        <!-- Admin Left Sidebar -->
+        <aside class="admin-sidebar">
+          <div class="sidebar-header">
+            <span class="admin-brand">Dulce Admin</span>
+            <span class="admin-subtitle">Alchemist Dashboard</span>
+          </div>
+
+          <nav class="sidebar-nav">
+            <button class="sidebar-link active" data-admin-panel="dashboard">
+              <svg viewBox="0 0 24 24" class="nav-icon">
+                <rect x="3" y="3" width="7" height="9" stroke="currentColor" stroke-width="2" fill="none"/>
+                <rect x="14" y="3" width="7" height="5" stroke="currentColor" stroke-width="2" fill="none"/>
+                <rect x="14" y="12" width="7" height="9" stroke="currentColor" stroke-width="2" fill="none"/>
+                <rect x="3" y="16" width="7" height="5" stroke="currentColor" stroke-width="2" fill="none"/>
+              </svg>
+              <span>Dashboard</span>
+            </button>
+            <button class="sidebar-link" data-admin-panel="inventory">
+              <svg viewBox="0 0 24 24" class="nav-icon">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" fill="none"/>
+              </svg>
+              <span>Inventario</span>
+            </button>
+            <button class="sidebar-link" data-admin-panel="orders">
+              <svg viewBox="0 0 24 24" class="nav-icon">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" stroke="currentColor" stroke-width="2" fill="none"/>
+              </svg>
+              <span>Pedidos</span>
+            </button>
+            <button class="sidebar-link" data-admin-panel="clients">
+              <svg viewBox="0 0 24 24" class="nav-icon">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" fill="none"/>
+                <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" stroke-width="2" fill="none"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" fill="none"/>
+              </svg>
+              <span>Clientes</span>
+            </button>
+            <button class="sidebar-link" data-admin-panel="settings">
+              <svg viewBox="0 0 24 24" class="nav-icon">
+                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" stroke-width="2" fill="none"/>
+              </svg>
+              <span>Ajustes</span>
+            </button>
+          </nav>
+
+          <div class="sidebar-footer">
+            <button class="btn btn-primary add-product-btn" id="btn-admin-add-product">
+              <span>+ Nuevo Producto</span>
+            </button>
+            
+            <div class="admin-profile-card">
+              <div class="profile-avatar">
+                <svg viewBox="0 0 24 24" class="avatar-svg">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
+              <div class="profile-details">
+                <strong id="admin-name">Admin Avatar</strong>
+                <span>Admin Role</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Admin Main Content Area -->
+        <main class="admin-main-panel">
+          
+          <!-- Admin Panel Navigation Header -->
+          <div class="admin-panel-header">
+            <div>
+              <h2 class="admin-title-heading" id="admin-section-title">Overview</h2>
+              <p class="admin-title-subtitle">Welcome back, Head Alchemist.</p>
+            </div>
+            <div class="admin-header-actions">
+              <div class="admin-search-wrapper">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" id="admin-search-input" placeholder="Search data..." aria-label="Buscar en admin">
+              </div>
+              <button class="admin-notify-btn" aria-label="Notificaciones">
+                <svg viewBox="0 0 24 24" class="notify-icon">
+                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+                <span class="notify-badge"></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- SUB-PANEL 1: DASHBOARD OVERVIEW -->
+          <div id="admin-panel-dashboard" class="admin-sub-view active-sub-view">
+            <!-- 4 Metrics Cards -->
+            <div class="metrics-grid">
+              <!-- Card 1 -->
+              <div class="metric-card card-sales">
+                <div class="metric-info">
+                  <span>VENTAS</span>
+                  <strong>$12,840.00</strong>
+                  <span class="metric-growth color-green">📈 +12.5% vs last month</span>
+                </div>
+                <div class="metric-icon bg-pink-tint color-pink">
+                  <svg viewBox="0 0 24 24" class="met-icon"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2" fill="none"/><line x1="2" y1="10" x2="22" y2="10" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+              </div>
+              <!-- Card 2 -->
+              <div class="metric-card card-orders">
+                <div class="metric-info">
+                  <span>PEDIDOS</span>
+                  <strong>148</strong>
+                  <span class="metric-growth color-teal">🚀 +5 new today</span>
+                </div>
+                <div class="metric-icon bg-blue-tint color-blue">
+                  <svg viewBox="0 0 24 24" class="met-icon"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                </div>
+              </div>
+              <!-- Card 3 -->
+              <div class="metric-card card-low-stock">
+                <div class="metric-info">
+                  <span>BAJO STOCK</span>
+                  <strong class="color-crimson" id="admin-low-stock-count">12 Artículos</strong>
+                  <span class="metric-growth color-red">⚠️ Needs attention</span>
+                </div>
+                <div class="metric-icon bg-yellow-tint color-yellow">
+                  <svg viewBox="0 0 24 24" class="met-icon"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="currentColor" stroke-width="2" fill="none"/><line x1="12" y1="9" x2="12" y2="13" stroke="currentColor" stroke-width="2"/><line x1="12" y1="17" x2="12.01" y2="17" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+              </div>
+              <!-- Card 4 -->
+              <div class="metric-card card-stars">
+                <div class="metric-info">
+                  <span>ESTRELLAS</span>
+                  <strong>4.9 / 5.0</strong>
+                  <span class="metric-growth">⭐ Based on 2.4k reviews</span>
+                </div>
+                <div class="metric-icon bg-gold-tint color-gold">
+                  <svg viewBox="0 0 24 24" class="met-icon"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Main Dashboard Visual Layout: Inventory Summary & Recent Orders -->
+            <div class="admin-dashboard-layout">
+              <!-- Inventory Overview -->
+              <div class="admin-card-panel inventory-summary">
+                <div class="panel-card-header">
+                  <h3>Inventory Management</h3>
+                  <button class="btn-text-link btn-view-all-inventory">View All &rarr;</button>
+                </div>
+                
+                <div class="table-responsive">
+                  <table class="admin-table">
+                    <thead>
+                      <tr>
+                        <th>PRODUCT</th>
+                        <th>STOCK</th>
+                        <th>PRICE</th>
+                        <th>CATEGORY</th>
+                        <th>ACTIONS</th>
+                      </tr>
+                    </thead>
+                    <tbody id="admin-inventory-table-tbody">
+                      <!-- Rendered by JavaScript -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Recent Orders -->
+              <div class="admin-card-panel recent-orders">
+                <div class="panel-card-header">
+                  <h3>Recent Orders</h3>
+                  <span class="live-indicator-badge">LIVE</span>
+                </div>
+                
+                <div class="orders-list" id="admin-orders-list">
+                  <!-- Rendered by JavaScript -->
+                </div>
+                <button class="btn-full-width" id="btn-admin-view-all-orders">View All Orders</button>
+              </div>
+            </div>
+
+            <!-- Market Performance Section -->
+            <div class="admin-card-panel market-performance">
+              <div class="performance-content">
+                <h3>Market Alchemist Performance</h3>
+                <p>Your store's organic reach has increased by <strong class="color-teal">24%</strong> since the last inventory refresh. Keep experimenting with new palettes.</p>
+                
+                <div class="performance-stats">
+                  <div class="perf-stat-item">
+                    <strong class="stat-number">8.2k</strong>
+                    <span class="stat-label">Monthly Visitors</span>
+                  </div>
+                  <div class="perf-stat-divider"></div>
+                  <div class="perf-stat-item">
+                    <strong class="stat-number">312</strong>
+                    <span class="stat-label">New Alchemists</span>
+                  </div>
+                </div>
+              </div>
+              <div class="performance-chart-wrapper">
+                <!-- Inline SVG Performance Chart representing beautiful clean bar graphs -->
+                <svg id="svg-perf-chart" viewBox="0 0 400 150" class="performance-chart">
+                  <rect x="30" y="80" width="30" height="50" rx="4" fill="#f5cbd7" />
+                  <rect x="80" y="60" width="30" height="70" rx="4" fill="#eaa1b8" />
+                  <rect x="130" y="70" width="30" height="60" rx="4" fill="#a21b4b" />
+                  <rect x="180" y="40" width="30" height="90" rx="4" fill="#4de0d7" />
+                  <rect x="230" y="25" width="30" height="105" rx="4" fill="#0f8a84" />
+                  <rect x="280" y="45" width="30" height="85" rx="4" fill="#a21b4b" />
+                  <!-- Lines/Grid -->
+                  <line x1="10" y1="130" x2="380" y2="130" stroke="#ddd" stroke-width="1.5" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- SUB-PANEL 2: FULL INVENTORY LIST & FORMS -->
+          <div id="admin-panel-inventory" class="admin-sub-view">
+            <div class="admin-card-panel">
+              <div class="panel-card-header">
+                <h3>Todos los Productos</h3>
+                <button class="btn btn-secondary" id="btn-admin-new-product-top">+ Agregar Producto</button>
+              </div>
+              <div class="table-responsive">
+                <table class="admin-table inventory-full-table">
+                  <thead>
+                    <tr>
+                      <th>PRODUCTO</th>
+                      <th>SKU</th>
+                      <th>CATEGORÍA</th>
+                      <th>STOCK</th>
+                      <th>PRECIO (SOL)</th>
+                      <th>PRECIO (USD)</th>
+                      <th>ETIQUETA</th>
+                      <th>ACCIONES</th>
+                    </tr>
+                  </thead>
+                  <tbody id="admin-full-inventory-tbody">
+                    <!-- Rendered by JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- SUB-PANEL 3: ADD/EDIT PRODUCT DIALOG -->
+          <div id="admin-panel-edit-product" class="admin-sub-view">
+            <div class="admin-card-panel form-panel">
+              <h3 id="form-product-title">Agregar Nuevo Producto</h3>
+              <form id="form-product" class="admin-form">
+                <input type="hidden" id="form-prod-id">
+                
+                <div class="form-row-double">
+                  <div class="form-group">
+                    <label for="form-prod-name">Nombre del Producto</label>
+                    <input type="text" id="form-prod-name" required placeholder="Ej: Copos de Oro Comestible 24k">
+                  </div>
+                  <div class="form-group">
+                    <label for="form-prod-brand">Marca / Distribuidor</label>
+                    <input type="text" id="form-prod-brand" required placeholder="Ej: Lux Deco">
+                  </div>
+                </div>
+
+                <div class="form-row-double">
+                  <div class="form-group">
+                    <label for="form-prod-sku">SKU</label>
+                    <input type="text" id="form-prod-sku" required placeholder="Ej: GL-442">
+                  </div>
+                  <div class="form-group">
+                    <label for="form-prod-category">Categoría</label>
+                    <select id="form-prod-category">
+                      <option value="insumos">Insumos de Pastelería</option>
+                      <option value="decoracion">Decoración</option>
+                      <option value="moldes">Moldes y Repostería</option>
+                      <option value="utensilios">Utensilios</option>
+                      <option value="equipos">Equipos</option>
+                      <option value="empaques">Empaques</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-row-triple">
+                  <div class="form-group">
+                    <label for="form-prod-price-sol">Precio (S/)</label>
+                    <input type="number" id="form-prod-price-sol" step="0.01" min="0" required placeholder="89.00">
+                  </div>
+                  <div class="form-group">
+                    <label for="form-prod-price-usd">Precio ($)</label>
+                    <input type="number" id="form-prod-price-usd" step="0.01" min="0" required placeholder="24.00">
+                  </div>
+                  <div class="form-group">
+                    <label for="form-prod-stock">Stock Inicial</label>
+                    <input type="number" id="form-prod-stock" min="0" required placeholder="25">
+                  </div>
+                </div>
+
+                <div class="form-row-double">
+                  <div class="form-group">
+                    <label for="form-prod-tag">Etiqueta Especial (Opcional)</label>
+                    <select id="form-prod-tag">
+                      <option value="">Ninguna</option>
+                      <option value="popular">Popular</option>
+                      <option value="organic">Organic</option>
+                      <option value="lowstock">Low Stock</option>
+                      <option value="new">New</option>
+                      <option value="bestseller">Best Seller</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="form-prod-image">URL de la Imagen o Tipo Visual (SVG)</label>
+                    <select id="form-prod-image">
+                      <option value="svg-mold">Visual de Molde (Silicona)</option>
+                      <option value="svg-powder">Visual de Polvo (Cacao/Polvos)</option>
+                      <option value="svg-gel">Visual de Colorantes en Gel</option>
+                      <option value="svg-spatula">Visual de Espátulas / Herramientas</option>
+                      <option value="svg-vanilla">Visual de Vainas / Extractos</option>
+                      <option value="svg-stand">Visual de Stands / Platos</option>
+                      <option value="svg-gold">Visual de Hojas de Oro / Brillo</option>
+                      <option value="svg-piping">Visual de Boquillas / Mangas</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="form-prod-description">Descripción Detallada</label>
+                  <textarea id="form-prod-description" rows="3" placeholder="Ingredientes premium, grado alimentario profesional..."></textarea>
+                </div>
+
+                <div class="form-actions-row">
+                  <button type="button" class="btn btn-secondary" id="btn-form-cancel">Cancelar</button>
+                  <button type="submit" class="btn btn-primary" id="btn-form-save">Guardar Producto</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 5. ELEGANT AUTH MODAL (#modal-auth) -->
+  <div class="modal-overlay" id="modal-auth">
+    <div class="auth-modal-card">
+      <button class="modal-close-btn" id="btn-close-auth" aria-label="Cerrar modal">&times;</button>
+      
+      <!-- Logo Branding -->
+      <div class="auth-brand">
+        <h2>Dulce Alquimia</h2>
+        <p>Tu laboratorio de repostería creativa</p>
+      </div>
+
+      <!-- Tab Selectors -->
+      <div class="auth-tabs">
+        <button class="auth-tab-btn active" id="tab-login-btn">Iniciar Sesión</button>
+        <button class="auth-tab-btn" id="tab-register-btn">Crear Cuenta</button>
+      </div>
+
+      <!-- Login Form View -->
+      <form id="form-login" class="auth-form active-form">
+        <div class="form-group-floating">
+          <input type="email" id="login-email" required placeholder=" ">
+          <label for="login-email">Correo Electrónico</label>
+        </div>
+        <div class="form-group-floating">
+          <input type="password" id="login-password" required placeholder=" ">
+          <label for="login-password">Contraseña</label>
+        </div>
+        <div class="form-options">
+          <label class="checkbox-container">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+            Recordarme
+          </label>
+          <a href="#forgot" class="forgot-link">¿Olvidaste tu contraseña?</a>
+        </div>
+        <button type="submit" class="btn btn-primary btn-auth-submit">Entrar a la Alquimia</button>
+      </form>
+
+      <!-- Register Form View -->
+      <form id="form-register" class="auth-form">
+        <div class="form-group-floating">
+          <input type="text" id="register-name" required placeholder=" ">
+          <label for="register-name">Nombre Completo</label>
+        </div>
+        <div class="form-group-floating">
+          <input type="email" id="register-email" required placeholder=" ">
+          <label for="register-email">Correo Electrónico</label>
+        </div>
+        <div class="form-group-floating">
+          <input type="password" id="register-password" required placeholder=" ">
+          <label for="register-password">Contraseña</label>
+        </div>
+        <div class="form-options">
+          <label class="checkbox-container">
+            <input type="checkbox" required>
+            <span class="checkmark"></span>
+            Acepto términos y políticas de envío
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary btn-auth-submit">Crear Mi Alquimia</button>
+      </form>
+
+      <div class="auth-social-login">
+        <p class="social-divider"><span>O ingresa con</span></p>
+        <div class="social-buttons">
+          <button type="button" class="btn-social google-btn">
+            <svg viewBox="0 0 24 24" class="social-icon">
+              <path d="M12.24 10.285V13.4h6.887c-.275 1.565-1.88 4.604-6.887 4.604-4.33 0-7.866-3.577-7.866-8s3.536-8 7.866-8c2.46 0 4.105 1.025 5.047 1.926l2.427-2.334C17.955 2.192 15.34 1 12.24 1 6.033 1 12.24s5.033 11.24 11.24 11.24c6.478 0 10.793-4.537 10.793-10.985 0-.737-.08-1.302-.178-1.859H12.24z" fill="currentColor"/>
+            </svg>
+            Google
+          </button>
+          <button type="button" class="btn-social facebook-btn">
+            <svg viewBox="0 0 24 24" class="social-icon">
+              <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z" fill="currentColor"/>
+            </svg>
+            Facebook
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT SUCCESS MODAL -->
+  <div class="modal-overlay" id="modal-checkout-success">
+    <div class="success-modal-card">
+      <div class="success-icon-wrapper">
+        <svg viewBox="0 0 24 24" class="success-checkmark-svg">
+          <polyline points="20 6 9 17 4 12" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h2>¡Pedido Confirmado!</h2>
+      <p>Tu orden ha sido procesada con éxito por nuestros alquimistas. Pronto recibirás un correo con el detalle del envío y número de seguimiento.</p>
+      <div class="checkout-details-summary">
+        <div class="detail-row"><span>Código de Pedido:</span><strong id="success-order-id">#ORD-5819</strong></div>
+        <div class="detail-row"><span>Monto Cobrado:</span><strong id="success-order-amount">S/ 0.00</strong></div>
+      </div>
+      <button class="btn btn-primary btn-full-width" id="btn-success-close">Volver a la Tienda</button>
+    </div>
+  </div>
+
+
+  <!-- App Footer -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <div class="footer-col brand-col">
+        <span class="brand-title">Dulce Alquimia</span>
+        <p class="footer-tagline">Crafted for the Modern Alchemist.</p>
+        <p class="footer-desc">Forjando el futuro de la pastelería con herramientas profesionales e inspiración artística. Transformamos ingredientes en arte.</p>
+        <p class="copyright-text">&copy; 2026 Dulce Alquimia. Todos los derechos reservados.</p>
+      </div>
+
+      <div class="footer-col Links-col">
+        <h4>Tienda</h4>
+        <ul>
+          <li><a href="#catalog" class="footer-nav-link" data-view="catalog">Insumos</a></li>
+          <li><a href="#categories" class="footer-nav-link" data-view="home">Categorías</a></li>
+          <li><a href="#blog" class="footer-nav-link" data-view="blog">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col Help-col">
+        <h4>Ayuda</h4>
+        <ul>
+          <li><a href="#contact" class="footer-nav-link" data-view="contact">Contacto</a></li>
+          <li><a href="#shipping" class="footer-nav-link">Políticas de Envío</a></li>
+          <li><a href="#returns" class="footer-nav-link">Devoluciones</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col social-col">
+        <h4>Síguenos</h4>
+        <div class="social-links-row">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link instagram-text">Instagram</a>
+          <span class="social-separator"></span>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link facebook-text">Facebook</a>
+        </div>
+
+        <div class="newsletter-signup">
+          <label for="footer-email-input">Suscríbete al Alquimista</label>
+          <div class="newsletter-input-group">
+            <input type="email" id="footer-email-input" placeholder="Email" aria-label="Ingresa tu correo">
+            <button class="btn-newsletter-submit" id="btn-newsletter-footer" aria-label="Enviar">
+              <!-- Send Icon -->
+              <svg viewBox="0 0 24 24" class="send-icon">
+                <line x1="22" y1="2" x2="11" y2="13" stroke="currentColor" stroke-width="2"/>
+                <polygon points="22 2 15 22 11 13 2 9 22 2" stroke="currentColor" stroke-width="2" fill="none"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Sparkle Button (Image 2 bottom right float button) -->
+  <button class="floating-magic-btn" id="btn-floating-magic" aria-label="Botón Mágico">
+    <svg viewBox="0 0 24 24" class="magic-spark-icon">
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M12 7l1.5 3.5L17 12l-3.5 1.5L12 17l-1.5-3.5L7 12l3.5-1.5Z" fill="currentColor"/>
+    </svg>
+  </button>
+
+  <!-- JavaScript file -->
+  <script src="index.js"></script>
+</body>
+</html>
